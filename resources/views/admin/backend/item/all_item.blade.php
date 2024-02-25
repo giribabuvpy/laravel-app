@@ -30,16 +30,18 @@
                         <thead>
                             <tr>
                                 <th>Sl</th>
-                                <th>Item name</th> 
+                                <th>Category name</th>
+                                <th>Item name</th>  
                                 <th>Validation</th> 
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($items as $key => $item)
+                            @foreach ($items as $key => $item) 
                                 <tr>
                                     <td>{{ $key + 1 }}</td>
-                                    <td>{{ $item->item_name }}</td> 
+                                    <td>{{ $item->category->category_name }}</td> 
+                                    <td>{{ $item->item_name }}</td>  
                                     <td>{{ ($item->validation==1)?'Required':'Optional' }}</td> 
                                     <td>
                                         <a href='' class="btn btn-info px-5">Edit</a> 

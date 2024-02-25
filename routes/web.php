@@ -4,6 +4,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ExpenseItemController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Category;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +20,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $user = User::find(1);
+    $expense = $user->userExpenses;
+    dd($expense);
+    //return view('welcome');
 });
 
 Route::get('/dashboard', function () {

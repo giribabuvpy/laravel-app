@@ -31,26 +31,23 @@
                             </ul>
                             @endif
 
-                            <div class="mb-4">
-                                <label for="single-select-field" class="form-label">Select category</label>
-                                <select class="form-select" id="single-select-field" data-placeholder="Choose one thing">
-                                    <option></option>
-                                    <option value='1'>Fixed expenses</option>
-                                    <option>Solution</option>
-                                    <option>Conglomeration</option>
-                                    <option>Algoritm</option>
-                                    <option>Holistic</option>
+                            <div class="col-md-12">
+                                <label for="single-select-field" class="form-label">Select category</label> 
+                                <select name="category_id" class="form-select" id="single-select-field" > 
+                                    @foreach($category as $cat) 
+                                        <option value="{{$cat->id}}">{{$cat->category_name}}</option> 
+                                    @endforeach
                                 </select>
                             </div>
 
                             <div class="col-md-12">
                                 <label for="input3" class="form-label">Item name</label>
-                                <input type="text" value ="{{old('item_name')}}" class="form-control" id="item_name" name="item_name" placeholder="Category name">
+                                <input type="text" value ="{{old('item_name')}}" class="form-control" id="item_name" name="item_name" >
                             </div>
-
+ 
                             <div class="col-md-12">
-                                <label for="input3" class="form-label">Validation</label>
-                                <select name="validation">
+                                <label for="single-select-field" class="form-label">Validation</label> 
+                                <select class="form-select" name="validation" id="single-select-field" > 
                                     <option value='0'>Optional</option>
                                     <option value='1'>Required</option>
                                 </select>

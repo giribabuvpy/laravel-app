@@ -14,9 +14,9 @@ class CategoryTableSeeder extends Seeder
     public function run(): void
     {
         DB::table('categories')->insert([ 
-            [ 'category_name'=>'Daily expenses' ], 
-            [ 'category_name'=>'Fixed expenses' ], 
-            [ 'category_name'=>'Variable expenses' ],   
+            [ 'category_name'=>'Daily expenses'], 
+            [ 'category_name'=>'Fixed expenses'], 
+            [ 'category_name'=>'Variable expenses'],   
         ]);
     }
 }
